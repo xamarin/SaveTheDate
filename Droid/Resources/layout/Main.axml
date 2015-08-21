@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="16dp"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:background="@color/primaryDark"
+    android:id="@+id/main">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <TextView
+        android:text="Save the date for"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:fontFamily="sans-serif-light"
+        android:textSize="26sp"
+        android:layout_marginBottom="4dp" />
+    <ImageView
+        android:src="@drawable/event"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="72dp"
+        android:id="@+id/imageView1"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false" />
+    <TextView
+        android:text="April 24th–28th."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:id="@+id/textView2"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-light" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/text_email_layout">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_email"
+            android:hint="Email Address" />
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:text="Enter your email address to be the first to know when tickets are on sale."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email_text"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif" />
+    <Button
+        android:id="@+id/button_notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="          Notify Me          "
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primary"
+        android:layout_gravity="center_horizontal"
+        android:theme="@style/MainButton"
+        android:textColor="@android:color/white" />
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/progressBar"
+        android:visibility="invisible"
+        android:indeterminate="true" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+    <Button
+        android:id="@+id/button_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to Calendar"
+        android:stateListAnimator="@null"
+        android:backgroundTint="@color/primaryDark" />
+    <Button
+        android:id="@+id/button_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share..."
+        android:stateListAnimator="@null"
+        android:backgroundTint="@color/primaryDark" />
+</LinearLayout>
