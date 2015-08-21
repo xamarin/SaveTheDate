@@ -34,27 +34,28 @@ namespace UITests
         [Test]
         public void EnterEmail()
         {
-            var emailField = platform == Platform.Android ? "text_email" : "Email Address";
-            var notifyField = platform == Platform.Android ? "button_notify" : "Notify Me";
-            app.WaitForElement(x => x.Marked(emailField));
+            var emailField = "text_email";
+            var notifyField = "button_notify";
+
+            app.WaitForElement(emailField);
             if (platform == Platform.Android)
             {
-                app.ClearText(x => x.Marked(emailField));
+                app.ClearText(emailField);
             }
-            var query = app.Query(x => x.Marked(notifyField));
+            var query = app.Query(notifyField);
             Assert.IsFalse(query[0].Enabled);
 
-            app.EnterText(x => x.Marked(emailField), "mike@xamarin.com");
+            app.EnterText(emailField, "mike@xamarin.com");
             app.Screenshot("Then I enter an email address correct.");
-            query = app.Query(x => x.Marked(notifyField));
+            query = app.Query(notifyField);
             Assert.IsTrue(query[0].Enabled);
             app.Screenshot("Notify Enabled");
-            app.ClearText(x => x.Text("mike@xamarin.com"));
+            app.ClearText(emailField);
             app.Screenshot("Then I clear the email address.");
 
-            app.EnterText(x => x.Marked(emailField), "mike@xamarincom");
+            app.EnterText(emailField, "mike@xamarincom");
             app.Screenshot("Then I enter an email address incorrect.");
-            query = app.Query(x => x.Marked(notifyField));
+            query = app.Query(notifyField);
             Assert.IsFalse(query[0].Enabled);
 
         }
@@ -62,18 +63,18 @@ namespace UITests
         [Test]
         public void PressNotify()
         {
-            var emailField = platform == Platform.Android ? "text_email" : "Email Address";
-            var notifyField = platform == Platform.Android ? "button_notify" : "Notify Me";
-            app.WaitForElement(x => x.Marked(emailField));
+            var emailField = "text_email";
+            var notifyField = "button_notify";
+            app.WaitForElement(emailField);
 
             if (platform == Platform.Android)
             {
-                app.ClearText(x => x.Marked(emailField));
+                app.ClearText(emailField);
             }
-            app.EnterText(x => x.Marked(emailField), "mike@xamarin.com");
+            app.EnterText(emailField, "mike@xamarin.com");
             app.Screenshot("Then I enter an email address");
 
-            var button = app.Query(x => x.Marked(notifyField));
+            var button = app.Query(notifyField);
             if (button.First().Enabled)
                 app.Screenshot("then Notify becomes enabled");
             else
@@ -81,7 +82,7 @@ namespace UITests
 
             app.DismissKeyboard();
 
-            app.Tap(x => x.Marked(notifyField));
+            app.Tap(notifyField);
 
             if(platform == Platform.Android)
                 app.WaitForElement(x => x.Marked("OK"));
@@ -99,11 +100,12 @@ namespace UITests
         public void AddToCalendar()
         {
             
-            
-            app.WaitForElement(x => x.Marked("Add to Calendar"));
+            var addToCalendar = "button_calendar";
+
+            app.WaitForElement(addToCalendar);
             app.Screenshot("Wait for add to calendar");
 
-            app.Tap(x => x.Marked("Add to Calendar"));
+            app.Tap(addToCalendar);
 
             /*if (this.platform == Platform.iOS)
             {
@@ -121,10 +123,12 @@ namespace UITests
         [Test]
         public void Share()
         {
-            app.WaitForElement(x => x.Marked("Share..."));
+            var shareButton = "button_share";
+
+            app.WaitForElement(shareButton);
             app.Screenshot("Wait for Share...");
 
-            app.Tap(x => x.Marked("Share..."));
+            app.Tap(shareButton);
             //app.Repl();
             if (platform == Platform.iOS)
             {

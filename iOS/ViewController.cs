@@ -36,6 +36,11 @@ namespace SaveTheDate.iOS
             imgLogo.Center = View.Center;
             View.BringSubviewToFront(imgLogo);
 
+            tbxEmailAddress.AccessibilityIdentifier = "text_email";
+            btnNotifyMe.AccessibilityIdentifier = "button_notify";
+            btnShare.AccessibilityIdentifier = "button_share";
+            btnAddToCalendar.AccessibilityIdentifier = "button_calendar";
+
             SetupUI();
             SetupUI2();
         }
