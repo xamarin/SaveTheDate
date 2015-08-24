@@ -75,7 +75,7 @@ namespace SaveTheDate.iOS
             // Release any cached data, images, etc that aren't in use.        
         }
 
-        public override void OnKeyboardChanged(bool visible, CoreGraphics.CGRect keyboardFrame)
+        /*public override void OnKeyboardChanged(bool visible, CoreGraphics.CGRect keyboardFrame)
         {
             base.OnKeyboardChanged(visible, keyboardFrame);
             if (visible == true)
@@ -122,7 +122,7 @@ namespace SaveTheDate.iOS
                     {
                     });
             }
-        }
+        }*/
 
         void SetupUI2()
         {
